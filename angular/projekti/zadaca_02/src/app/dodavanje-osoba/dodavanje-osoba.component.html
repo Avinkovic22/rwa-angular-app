@@ -1,0 +1,32 @@
+<div class="pretrazivanje-div">
+    <h1>Pretraživanje osoba</h1>
+    <input type="text" [(ngModel)]="trazenaOsoba">
+    <button (click)="pretraziOsobu()">Traži</button>
+</div>
+
+<div class="stranicenje" *ngIf="osobe.length > 1">
+  <button (click)="prethodnaStranica()" [disabled]="trenutnaStranica === 1">Prethodna</button>
+  <span>Stranica {{ trenutnaStranica }} od {{ ukupnoStranica }}</span>
+  <button (click)="sljedecaStranica()" [disabled]="trenutnaStranica === ukupnoStranica">Sljedeća</button>
+</div>
+<table *ngIf="osobe.length > 0">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Poznat po</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let osoba of osobe">
+        <td>{{ osoba.name}}</td>
+        <td>{{ osoba.known_for_department}}</td>
+        <td>
+            <ng-container *ngIf="!osoba.exists"><button class="dodaj" (click)="dodajOsobu(osoba.id)">Dodaj osobu</button></ng-container>
+            <ng-container *ngIf="osoba.exists"><button class="obrisi" (click)="obrisiOsobu(osoba.id)">Obriši osobu</button></ng-container>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<h2 *ngIf="!pretrazivanje && osobe.length < 1">Nema pronađenih rezultata.</h2>
+  

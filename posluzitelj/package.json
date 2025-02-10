@@ -1,0 +1,30 @@
+{
+	"name": "zadaca_01",
+	"version": "1.0.0",
+	"description": "RWA zadaca 1",
+	"main": "servis.js",
+	"type": "module",
+	"scripts": {
+		"pripremi": "npm link --save --package-lock false express  express-session cookie-parser better-sqlite3 cors jsonwebtoken nodemailer base32-encoding totp-generator",
+		"copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.jpg 'src/**/*.js' build/",
+		"clean": "rm -r build/*",
+		"compile": "tsc --watch false",
+		"servis": "node build/servis/servis.js konfiguracija.csv",
+		"aplikacija": "node build/aplikacija/aplikacija.js",
+		"start": "npm run clean && npm run compile && npm run copy-files && npm run servis",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Antonio Vinković",
+	"license": "ISC",
+	"dependencies": {
+		"base32-encoding": "^1.0.0",
+		"better-sqlite3": "^8.0.0",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"express-session": "^1.17.3",
+		"jsonwebtoken": "^9.0.0",
+		"nodemailer": "^6.9.0",
+		"totp-generator": "^1.3.0"
+	}
+}

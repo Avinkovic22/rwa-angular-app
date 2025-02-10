@@ -1,0 +1,82 @@
+.detalji-osobe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    span {
+        font-size: 20px;
+    }
+
+    img {
+        height: 300px;
+        width: 250px;
+    }
+
+    .galerija-slika {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 50px;
+
+      img {
+        height: 250px;
+        width: 200px;
+        border-radius: 15px;
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 1px 8px rgba(160, 160, 160, 0.5);
+        }
+    }
+
+    }
+
+    table {
+        width: 900px;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+        color: white;
+        text-align: center;
+      
+        thead {
+          background-color: #3b3a3a;
+      
+          th {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+          }
+        }
+      
+        tbody {
+            td {
+              padding: 10px;
+              border: 1px solid #ddd;
+            }
+          }
+        }
+
+        img {
+            width: 100px;
+            height: 130px;
+        }
+
+        button {
+          padding: 14px;
+          font-size: 14px;
+          width: 200px;
+          color: white;
+          background-color: rgb(1, 63, 177);
+          font-weight: bold;
+          border: none;
+          border-radius: 6px;
+      
+          &:hover {
+              opacity: 90%;
+              cursor: pointer;
+          }
+      }
+}

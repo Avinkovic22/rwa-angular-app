@@ -1,0 +1,39 @@
+<div class="forma-div">
+    <h1>Registracija</h1>
+    <span *ngIf="poruka" class="upozorenje">{{poruka}}</span>
+    <form (ngSubmit)="onSubmit()" action="/registracija" method="POST">
+        <div class="input-div">
+            <label for="ime">Ime</label>
+            <input type="text" name="ime" id="ime" [(ngModel)]="ime" />
+        </div>
+        <div class="input-div">
+            <label for="prezime">Prezime</label>
+            <input type="text" name="prezime" id="prezime" [(ngModel)]="prezime" />
+        </div>
+        <div class="input-div">
+            <label for="korime">Korisničko ime</label>
+            <input type="text" name="korime" id="korime" [(ngModel)]="korime" />
+        </div>
+        <div class="input-div">
+            <label for="lozinka">Lozinka</label>
+            <input type="password" name="lozinka" id="lozinka" [(ngModel)]="lozinka" />
+        </div>
+        <div class="input-div">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" />
+        </div>
+        <div class="input-div">
+            <label for="adresa">Adresa</label>
+            <input type="text" name="adresa" id="adresa" [(ngModel)]="adresa" />
+        </div>
+        <div class="input-div">
+            <label for="telefon">Telefon</label>
+            <input type="text" name="telefon" id="telefon" [(ngModel)]="telefon" />
+        </div>
+        <div class="input-div">
+            <label for="datum_rodenja">Datum rođenja</label>
+            <input type="text" name="datum_rodenja" id="datum_rodenja" [(ngModel)]="datum_rodenja" />
+        </div>
+        <button type="submit">Registriraj se</button>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+<table>
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Korisničko ime</th>
+        <th>Email</th>
+        <th>Tip korisnika</th>
+        <th>Telefon</th>
+        <th>Datum rođenja</th>
+        <th>Adresa</th>
+        <th>Zahtjev</th>
+        <th>Servis prava</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let korisnik of korisnici">
+        <td>{{ korisnik.ime}}</td>
+        <td>{{ korisnik.prezime }}</td>
+        <td>{{ korisnik.korime }}</td>
+        <td>{{ korisnik.email }}</td>
+        <td>
+            <ng-container *ngIf="korisnik.tip_korisnika_id === 1">Registrirani korisnik</ng-container>
+            <ng-container *ngIf="korisnik.tip_korisnika_id === 2">Administrator</ng-container>
+        </td>
+        <td>{{ korisnik.telefon }}</td>
+        <td>{{ korisnik.datum_rodenja }}</td>
+        <td>{{ korisnik.adresa }}</td>
+        <td>
+            <ng-container *ngIf="korisnik.poslao_zahtjev === 1"><span class="bold">Poslao zahtjev!</span></ng-container>
+            <ng-container *ngIf="korisnik.tip_korisnika_id != 1"></ng-container>
+        </td>
+        <td>
+            <ng-container *ngIf="korisnik.servis_prava=== 0 && korisnik.korime !== trenutniKorisnik"><button class="dodaj" (click)="dajPrava(korisnik.korime)">Daj prava</button></ng-container>
+            <ng-container *ngIf="korisnik.servis_prava === 1 && korisnik.korime !== trenutniKorisnik"><button class="izbrisi" (click)="makniPrava(korisnik.korime)">Izbriši prava</button></ng-container>
+        </td>
+        <td><button *ngIf="korisnik.korime !== trenutniKorisnik" class="izbrisi" (click)="izbrisiKorisnika(korisnik.korime)">Izbriši korisnika</button></td>
+      </tr>
+    </tbody>
+  </table>
+  

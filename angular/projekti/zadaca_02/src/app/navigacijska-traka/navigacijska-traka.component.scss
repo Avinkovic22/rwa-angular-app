@@ -1,0 +1,22 @@
+$boja-tekst: #9DB6CC;
+$primarna-boja: #1D242B;
+$sekundarna-boja: #14181C;
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    a, button {
+        text-decoration: none;
+        font-size: 25px;
+        color: $boja-tekst;
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
+}

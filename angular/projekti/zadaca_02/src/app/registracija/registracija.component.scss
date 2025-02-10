@@ -1,0 +1,59 @@
+$boja-tekst: #9DB6CC;
+$primarna-boja: #1D242B;
+$sekundarna-boja: #14181C;
+
+.forma-div {
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    .upozorenje {
+        margin-bottom: 20px;
+        border: 1px solid red;
+        padding: 10px;
+        background-color: white;
+        color: red;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    margin-top: 40px;
+
+    .input-div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input {
+        width: 350px;
+        height: 35px;
+        outline: none;
+        padding-left: 5px;
+        font-size: 20px;
+    }
+}
+
+button {
+    padding: 14px;
+    font-size: 14px;
+    width: 130px;
+    color: white;
+    background-color: $sekundarna-boja;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+
+    &:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
+}

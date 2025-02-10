@@ -1,0 +1,22 @@
+<div *ngIf="!greska" class="stranicenje">
+    <button (click)="promijeniStranicu(trenutnaStranica - 1)" [disabled]="trenutnaStranica === 1">Prethodna</button>
+    <span>Stranica {{ trenutnaStranica }} od {{ ukupnoStranica }}</span>
+    <button (click)="promijeniStranicu(trenutnaStranica + 1)" [disabled]="trenutnaStranica === ukupnoStranica">Sljedeća</button>
+    <select name="stranicenjeOdabir" id="stranicenjeOdabir" [(ngModel)]="brojOsobaPoStranici" (ngModelChange)="promijeniBrojOsoba(brojOsobaPoStranici)">
+        <option [ngValue]="5">5</option>
+        <option [ngValue]="10">10</option>
+        <option [ngValue]="20">20</option>
+        <option [ngValue]="50">50</option>
+    </select>
+</div>
+<div *ngIf="!greska" class="popis-osoba">
+    <div *ngFor="let osoba of prikazaneOsobe">
+        <a [routerLink]="['/detalji', osoba.tmdb_id_osoba]">
+            <img *ngIf="osoba.profilna_slika" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + osoba.profilna_slika" [alt]="osoba.ime">
+            <img *ngIf="!osoba.profilna_slika" [src]="'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif'" [alt]="osoba.ime">
+        </a>
+        <span>{{osoba.ime}}</span>
+        <span>{{osoba.poznat_po}}</span>
+    </div>
+</div>
+<h1 *ngIf="greska">{{greska}}</h1>

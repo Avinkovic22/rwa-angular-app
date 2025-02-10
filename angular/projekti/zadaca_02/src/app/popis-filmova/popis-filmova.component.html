@@ -1,0 +1,47 @@
+<div *ngIf="!greska" class="filtriranje-datum">
+  <div>
+    <div class="filter">
+      <label for="datumOd">Datum od:</label>
+      <input type="date" name="datumOd" [(ngModel)]="datumOd">
+    </div>
+    <div class="filter">
+      <label for="datumDo">Datum do:</label>
+      <input type="date" name="datumDo" [(ngModel)]="datumDo">
+    </div>
+  </div>
+  <button (click)="ucitajStranicu(1)">Filtriraj filmove</button>
+</div>
+
+<div *ngIf="!greska" class="stranicenje">
+    <button (click)="prethodnaStranica()" [disabled]="trenutnaStranica === 1">Prethodna</button>
+    <span>Stranica {{ trenutnaStranica }} od {{ ukupnoStranica }}</span>
+    <button (click)="sljedecaStranica()" [disabled]="trenutnaStranica === ukupnoStranica">Sljedeća</button>
+</div>
+
+<table *ngIf="!greska">
+    <thead>
+      <tr>
+        <th>Jezik</th>
+        <th>Originalni naslov</th>
+        <th>Naslov</th>
+        <th>Popularnost</th>
+        <th>Poster</th>
+        <th>Datum izdavanja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let film of filmovi">
+        <td>{{ film.jezik }}</td>
+        <td>{{ film.originalni_naslov }}</td>
+        <td title="{{film.opis}}">{{ film.naslov }}</td>
+        <td>{{ film.popularnost }}</td>
+        <td>
+            <img *ngIf="film.poster" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + film.poster" [alt]="film.poster">
+            <img *ngIf="!film.poster" [src]="'https://media.istockphoto.com/id/1642381175/vector/cinema.jpg?s=612x612&w=0&k=20&c=owIct55daWlWRwPbTYLI9Y1IsrgYiqJcpvvgycvxBhE='" [alt]="film.poster">
+        </td>
+        <td>{{ film.datum_izdavanja }}</td>
+      </tr>
+    </tbody>
+</table> 
+
+<h1 *ngIf="greska">{{greska}}</h1>

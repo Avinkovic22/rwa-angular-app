@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+    text-align: center;
+  
+    thead {
+      background-color: #3b3a3a;
+  
+      th {
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-weight: bold;
+      }
+    }
+  
+    tbody {
+        td {
+          padding: 10px;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+        width: 130px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+
+        &:hover {
+            opacity: 90%;
+            cursor: pointer;
+        }
+    }
+
+    .izbrisi {
+        background-color: rgb(207, 39, 39);
+    }
+
+    .dodaj {
+        background-color: rgb(44, 165, 44);
+    }
+  

@@ -1,0 +1,57 @@
+.opis {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.slika-autora {
+    height: 150px;
+    width: 150px;
+}
+
+.baze {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  img {
+    height: 400px;
+    width: 600px;
+    cursor: pointer;
+  }
+}
+
+table {
+    width: 900px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+    text-align: center;
+  
+    thead {
+      background-color: #3b3a3a;
+  
+      th {
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-weight: bold;
+      }
+    }
+  
+    tbody {
+        td {
+          padding: 10px;
+          border: 1px solid #ddd;
+        }
+      }
+}
+
+.todo-opis {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}

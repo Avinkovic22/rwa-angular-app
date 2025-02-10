@@ -1,0 +1,31 @@
+.osobni-podaci {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        padding: 14px;
+        font-size: 14px;
+        width: 200px;
+        color: white;
+        background-color: rgb(1, 63, 177);
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+    
+        &:hover {
+            opacity: 90%;
+            cursor: pointer;
+        }
+    }
+
+    .omoguceno {
+        color: green;
+        font-weight: bold;
+    }
+
+    .neomoguceno {
+        color: red;
+        font-weight: bold;
+    }
+}

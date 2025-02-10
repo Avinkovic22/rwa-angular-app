@@ -1,0 +1,17 @@
+<div class="forma-div">
+    <h1>Prijava</h1>
+    <span *ngIf="poruka" class="upozorenje">{{poruka}}</span>
+    <form (ngSubmit)="onSubmit()" action="/prijava" method="POST">
+        <div class="input-div">
+            <label for="korime">Korisničko ime</label>
+            <input name="korime" type="text" id="korime" [(ngModel)]="korime" />
+        </div>
+        <div class="input-div">
+            <label for="lozinka">Lozinka</label>
+            <input name="lozinka" type="password" id="lozinka" [(ngModel)]="lozinka" />
+        </div>
+        <button type="submit">Prijavi se</button>
+        <p>Korime: admin Lozinka: rwa</p>
+        <p>Korime: obican Lozinka: rwa</p>
+    </form>
+</div>

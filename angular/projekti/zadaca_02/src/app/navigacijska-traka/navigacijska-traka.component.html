@@ -1,0 +1,29 @@
+<ul>
+    <li *ngIf="!prijavljen">
+      <a routerLink="/prijava">Prijava</a>
+    </li>
+    <li *ngIf="!prijavljen">
+      <a routerLink="/registracija">Registracija</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <a routerLink="/">Početna</a>
+    </li>
+    <li>
+      <a routerLink="/dokumentacija">Dokumentacija</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <a routerLink="/osobe">Osobe</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <a routerLink="/korisnici">Korisnici</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <a routerLink="/dodavanje-osoba">Dodavanje</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <a routerLink="/filmovi">Filmovi</a>
+    </li>
+    <li *ngIf="prijavljen">
+      <button (click)="odjava()">Odjava</button>
+    </li>
+  </ul>

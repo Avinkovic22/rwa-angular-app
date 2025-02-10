@@ -1,0 +1,23 @@
+<div class='osobni-podaci'>
+    <h1>Pozdrav, {{korisnik.korime}}</h1>
+    <button *ngIf="!korisnik.poslao_zahtjev && !korisnik.servis_prava" (click)="posaljiZahtjev(korisnik.korime)">Pošalji zahtjev za servis</button>
+    <h2 *ngIf="korisnik.poslao_zahtjev && !korisnik.servis_prava">Zahtjev za servis poslan!</h2>
+    <span>
+        <ng-container *ngIf="korisnik.tip_korisnika_id === 1">Registrirani korisnik</ng-container>
+        <ng-container *ngIf="korisnik.tip_korisnika_id === 2">Administrator</ng-container>
+    </span>
+    <p>Pravo na servis: 
+        <span [ngClass]="{'omoguceno': korisnik.servis_prava === 1, 'neomoguceno': korisnik.servis_prava === 0}">
+            <ng-container *ngIf="korisnik.servis_prava === 1">Omogućeno</ng-container>
+            <ng-container *ngIf="korisnik.servis_prava === 0">Neomogućeno</ng-container>
+        </span>
+    </p>
+    <span>Email: {{korisnik.email}}</span>
+    <span>Ime: {{korisnik.ime}}</span>
+    <span>Prezime: {{korisnik.prezime}}</span>
+    <span>Adresa: {{korisnik.adresa}}</span>
+    <span>Telefon: {{korisnik.telefon}}</span>
+    <span>Datum rođenja: {{korisnik.datum_rodenja}}</span>
+</div>
+
+

@@ -1,0 +1,56 @@
+$boja-tekst: #9DB6CC;
+$primarna-boja: #1D242B;
+$sekundarna-boja: #14181C;
+
+.stranicenje {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    button, select {
+        padding: 14px;
+        font-size: 14px;
+        width: 130px;
+        color: white;
+        background-color: $sekundarna-boja;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+
+        &:hover {
+            opacity: 90%;
+            cursor: pointer;
+        }
+    }
+}
+
+.popis-osoba {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+
+        img {
+            height: 250px;
+            width: 200px;
+            transition: box-shadow 0.2s ease;
+            border-radius: 15px;
+
+            &:hover {
+                box-shadow: 0 1px 8px rgba(160, 160, 160, 0.5);
+            }
+        }
+
+        span {
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<div *ngIf="!greska" class="detalji-osobe">
+    <h1>Detalji osobe</h1>
+    <span>Ime i prezime: {{osoba?.ime}}</span>
+    <span>Poznat po: {{osoba?.poznat_po}}</span>
+    <span>Popularnost: {{osoba?.popularnost}}</span>
+    <img *ngIf="osoba?.profilna_slika" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + osoba?.profilna_slika" [alt]="osoba?.ime">
+    <img *ngIf="!osoba?.profilna_slika" [src]="'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif'" [alt]="osoba?.ime">
+
+   <div class="galerija-slika">
+    <img *ngFor="let slika of slikeOsobe" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + slika.file_path" [alt]="slika.file_path">
+   </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Jezik</th>
+            <th>Originalni naslov</th>
+            <th>Naslov</th>
+            <th>Popularnost</th>
+            <th>Poster</th>
+            <th>Datum izdavanja</th>
+            <th>Lik</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let film of osobaFilmovi">
+            <td>{{ film.jezik }}</td>
+            <td>{{ film.originalni_naslov }}</td>
+            <td title="{{film.opis}}">{{ film.naslov }}</td>
+            <td>{{ film.popularnost }}</td>
+            <td>
+                <img *ngIf="film.poster" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + film.poster" [alt]="film.poster">
+                <img *ngIf="!film.poster" [src]="'https://media.istockphoto.com/id/1642381175/vector/cinema.jpg?s=612x612&w=0&k=20&c=owIct55daWlWRwPbTYLI9Y1IsrgYiqJcpvvgycvxBhE='" [alt]="film.poster">
+            </td>
+            <td>{{ film.datum_izdavanja }}</td>
+            <td>{{film.lik}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <button *ngIf="trenutnaStranica < ukupnoStranica" (click)="ucitajJosFilmova()">Učitaj još filmova</button>   
+</div>
+<h1 *ngIf="greska">Došlo je do pogreške!</h1>
