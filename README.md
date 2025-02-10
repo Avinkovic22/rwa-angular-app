@@ -1,6 +1,7 @@
-<p align="center" style="font-size: 24px; font-weight: bold;">
-    Simple Full-stack web app for management of movies and actors.
+<p align="center">
+  <strong style="font-size: 24px;">Simple Full-stack web app for management of movies and actors</strong>
 </p>
+
 
 Technologies: Angular, SCSS, NodeJS, Express, SQLite
 
