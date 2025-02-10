@@ -1,4 +1,6 @@
-Simple Full-stack web app for management of movies and actors.
+<p align="center" style="font-size: 24px; font-weight: bold;">
+    Simple Full-stack web app for management of movies and actors.
+</p>
 
 Technologies: Angular, SCSS, NodeJS, Express, SQLite
 
